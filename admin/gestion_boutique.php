@@ -50,9 +50,9 @@ $contenu .= '<a href="?action=ajout">Ajout d\'un produit</a><br><br><hr><br>';
 //--- AFFICHAGE PRODUITS ---//
 if (isset($_GET['action']) && $_GET['action'] == "affichage") {
     $résultat = executeRequete("SELECT * FROM produit");
-    $contenu .= '<h2> Affichage des Produits </h2>';
-    $contenu .= 'Nombre de produit(s) dans la boutique : ' . $résultat->num_rows;
-    $contenu .= '<table border="1"><tr>';
+    $contenu .= '<h2 style="text-align: center;"> Affichage des Produits </h2>';
+    $contenu .= '<div style="text-align: center;">Nombre de produit(s) dans la boutique : ' . $résultat->num_rows . '</div>';
+    $contenu .= '<table border="1" style="margin: 0 auto; text-align: center;"><tr>';
     while ($colonne = $résultat->fetch_field()) {
         $contenu .= '<th>' . $colonne->name . '</th>';
     }
